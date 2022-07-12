@@ -1,3 +1,4 @@
+/// <reference types="Cypress" />
 //import {faker} from '@faker-js/faker'
 
 /* it('Usuário já cadastrado', function(){
@@ -58,5 +59,5 @@ it('Deve cadastrar um novo usuário', function(){
     cy.get('.toast')
         .should('be.visible')
         .find('p')
-        .should('have.text','Agora você pode fazer seu login no Samurai Barbershop!')
+        .should('have.text','Agora você se tornou um(a) Samurai, faça seu login para ver seus agendamentos!')
 })
