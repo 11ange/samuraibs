@@ -35,17 +35,7 @@ describe('cadastro', function () {
             is_provider: true
         }
         before(function () {
-            cy.task('removeUser', usuario.email)
-                .then(function (result) {
-                    console.log(result)
-                })
-            cy.request(
-                'POST',
-                'http://localhost:3333/users',
-                usuario
-            ).then(function (response) {
-                expect(response.status).to.eq(200)
-            })
+            cy.criaUsuarioViaAPI(usuario)
         })
 
         it('Não deve cadastrar o usuário', function () {
@@ -95,7 +85,7 @@ describe('cadastro', function () {
         })
     })
 
-    context.only('Quando não preencho nenhum dos campos', function () {
+    context('Quando não preencho nenhum dos campos', function () {
         const mensagens = ['Nome é obrigatório', 'E-mail é obrigatório', 'Senha é obrigatória']
 
         before(function () {
